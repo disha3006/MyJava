@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class LinsertionSort {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size of an array");
+        int size = sc.nextInt();
+
+        int arr[] = new int[size];
+
+        System.out.println("Enter nos to ur array");
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Your array is " + Arrays.toString(arr));
+
+            for (int x = 0 ; x<size-1 ;x++){
+                for(int y = x+1 ; y>0 ; y--){
+                    if(arr[y]< arr[y-1]) {
+                        int temp = arr[x];
+                        arr[x] = arr[y];
+                        arr[y]= temp;
+                    }
+                }
+            }System.out.println("your sorted array is " + Arrays.toString(arr));
+        }
+    }
